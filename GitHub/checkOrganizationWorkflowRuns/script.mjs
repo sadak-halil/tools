@@ -9,10 +9,11 @@ const END_DATE_TIME = 'END_DATE_TIME'//example for UTC zone '2023-10-01T23:59:59
 
 async function fetchRepos() {
     let repos = [];
-    let page = 1;
+    let pages = 1;
+    const resultsPerPage = 100;
 
     while (true) {
-        const response = await fetch(`https://api.github.com/orgs/${ORG}/repos?per_page=100&page=${page}`, {
+        const response = await fetch(`https://api.github.com/orgs/${ORG}/repos?per_page=${resultsPerPage}&page=${pages}`, {
             headers: {
                 'Authorization': `token ${TOKEN}`,
                 'Accept': 'application/vnd.github.v3+json'
@@ -26,7 +27,7 @@ async function fetchRepos() {
         }
 
         repos = repos.concat(data.map(repo => repo.full_name));
-        page++;
+        pages++;
     }
 
     return repos;
