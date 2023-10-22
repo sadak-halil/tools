@@ -23,7 +23,7 @@ Ensure you **do not** push your personal access token or the output.txt file to 
 
 ```bash
 git clone https://github.com/sadak-halil/tools.git
-cd tools
+cd tools/GitHub/checkOrganizationWorkflowRuns/
 ```
 
 2. Install the required npm package:
