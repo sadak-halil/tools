@@ -1,4 +1,4 @@
-# GitHub Actions Check for an Organization
+# GitHub Actions Workflow Runs Check for an Organization
 
 This script checks for GitHub Actions workflow runs in repositories of a specified organization within a defined time window.
 
